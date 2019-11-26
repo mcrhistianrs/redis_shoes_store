@@ -1,6 +1,6 @@
-import { call , put , all , takeLatest }       from 'redux-saga/effects';
-import api                  from '../../../services/api';
-import { addToCartSuccess } from './actions';
+import { call , put , all , takeLatest }        from 'redux-saga/effects';
+import api                                      from '../../../services/api';
+import { addToCartSuccess }                     from './actions';
 
 function* addToCart({id}){
     const response = yield call(api.get, `/products/${id}`);
@@ -8,5 +8,5 @@ function* addToCart({id}){
 }
 
 export default all([
-    takeLatest(),
-]);
+    takeLatest('@cart/ADD_REQUEST' , addToCart),
+]); 
