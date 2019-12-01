@@ -2,6 +2,7 @@ import { call , put , all , takeLatest ,select }    from 'redux-saga/effects';
 import api                                          from '../../../services/api';
 import {formatPrice}                                from '../../../util/format';
 import { addToCartSuccess, updatedAmount }          from './actions';
+import {toast}                                      from 'react-toastify';
 
 function* addToCart({id}){
 
@@ -15,7 +16,7 @@ function* addToCart({id}){
     const amount = currentAmount + 1;
 
     if(amount > stockAmount){
-        console.tron.warn("errro");
+        toast.error("Total is greather than stock");
         return;
     }
 
