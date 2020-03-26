@@ -1,10 +1,10 @@
 Its a shoes stores project. 
 I'm using:
-react
-redux
-redux-sage
-styled-components
-REST API
+## react
+## redux
+## redux-sage
+## styled-components
+## REST API
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
